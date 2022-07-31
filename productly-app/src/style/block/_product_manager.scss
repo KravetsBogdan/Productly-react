@@ -1,0 +1,128 @@
+.product_manager{
+    padding: 40px 0 0;
+
+    @include breakpoint-mf ('lg'){
+        padding: 102px 0 0;
+    }
+
+    .container{
+        display: grid;
+        grid-template-areas:
+        'b'
+        'a';
+
+        @include breakpoint-mf('lg'){
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+    }
+
+    &-image-holder,
+    &-text-holder{
+        @include breakpoint-mf ('lg'){
+            width: 50%;
+        }
+    }
+
+    &-image-holder{
+        @include breakpoint-mf ('lg'){
+            padding: 0 102px 0 0;
+        }
+    }
+
+    .grid-a{
+        grid-area: a;
+    }
+    
+    .grid-b{
+        grid-area: b;
+    }
+
+    &-pseudo-title{
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: $black;
+        padding: 0 0 3px;
+    }
+
+    &-title{
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 54px;
+        padding: 0 0 12px;
+
+        @include breakpoint-mf ('lg'){
+            padding: 0 0 22px;
+        }
+    }
+
+    &-description{
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 26px;
+        color: $black;
+        padding: 0 0 10px;
+
+        @include breakpoint-mf ('lg'){
+            padding: 0 0 30px;
+        }
+    }
+
+    &-item{
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 26px;
+        color: $black;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 0 20px 39px;
+
+        &::before{
+            position: absolute;
+            content: "";
+            width: 25px;
+            height: 25px;
+            background-color: $orange;
+            border-radius: 10px;
+            left: 0;
+
+            @include breakpoint-mf ('lg'){
+                left: -60px;
+                width: 35px;
+                height: 35px;
+                border-radius: 14px;
+            }
+        }
+
+        &::before{
+            position: absolute;
+            content: "\2714";
+            color: $white;
+            padding: 2px 0 0 6px;
+
+            @include breakpoint-mf ('lg'){
+                padding: 6px 0 0 11px;
+            }
+        }
+
+        @include breakpoint-mf ('lg'){
+            padding: 0 0 30px;
+        }
+
+        &:last-child{
+            padding: 0 0 40px 39px;
+
+            @include breakpoint-mf ('lg'){
+                padding: 0;
+            }
+        }
+    }
+
+    &-image{
+        display: block;
+        width: 100%;
+    }
+}
